@@ -1,0 +1,28 @@
+{
+  "name": "cfdi-system",
+  "version": "1.0.0",
+  "description": "Sistema de gestión de CFDI",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "test": "jest --verbose"
+  },
+  "keywords": [
+    "cfdi",
+    "fiscal",
+    "rfc"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "pdfkit": "^0.17.2",
+    "pg": "^8.18.0"
+  },
+  "devDependencies": {
+    "jest": "^30.2.0"
+  }
+}

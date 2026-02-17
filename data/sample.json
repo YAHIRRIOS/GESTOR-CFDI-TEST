@@ -1,0 +1,88 @@
+{
+  "transacciones": [
+    {
+      "Folio": "CFDI-001",
+      "RFC Emisor": "GARC850101HN1",
+      "RFC Receptor": "LOPE900515M23",
+      "Monto": 75000.00,
+      "Estatus": "Vigente"
+    },
+    {
+      "Folio": "CFDI-002",
+      "RFC Emisor": "ABC920101AB1",
+      "RFC Receptor": "INVALID",
+      "Monto": 32000.50,
+      "Estatus": "Inconsistente"
+    },
+    {
+      "Folio": "CFDI-003",
+      "RFC Emisor": "",
+      "RFC Receptor": "MUÑZ850101AB2",
+      "Monto": 120000.00,
+      "Estatus": "Vigente"
+    },
+    {
+      "Folio": "CFDI-004",
+      "RFC Emisor": "GARC850101HN1",
+      "RFC Receptor": "ABC-INVALID!",
+      "Monto": 45000.00,
+      "Estatus": "Vigente"
+    },
+    {
+      "Folio": "CFDI-005",
+      "RFC Emisor": "LOPE900515M23",
+      "RFC Receptor": "GARC850101HN1",
+      "Monto": 8500.00,
+      "Estatus": "Cancelado"
+    },
+    {
+      "Folio": "CFDI-006",
+      "RFC Emisor": "123",
+      "RFC Receptor": "456",
+      "Monto": 55000.00,
+      "Estatus": "Inconsistente"
+    },
+    {
+      "Folio": "CFDI-007",
+      "RFC Emisor": "XAXX010101000",
+      "RFC Receptor": "GARC850101HN1",
+      "Monto": 150000.00,
+      "Estatus": "Vigente"
+    },
+    {
+      "Folio": "CFDI-008",
+      "RFC Emisor": "A&C920101AB1",
+      "RFC Receptor": "LOPE900515M23",
+      "Monto": 49999.99,
+      "Estatus": "Vigente"
+    },
+    {
+      "Folio": "CFDI-009",
+      "RFC Emisor": "GARC850101HN1",
+      "RFC Receptor": "RFC.CON.PUNTOS",
+      "Monto": 62000.00,
+      "Estatus": "Inconsistente"
+    },
+    {
+      "Folio": "CFDI-010",
+      "RFC Emisor": "HERR780320KL9",
+      "RFC Receptor": "MART950812JN4",
+      "Monto": 50001.00,
+      "Estatus": "Vigente"
+    },
+    {
+      "Folio": "CFDI-011",
+      "RFC Emisor": "AB",
+      "RFC Receptor": "GARC850101HN1",
+      "Monto": 23000.00,
+      "Estatus": "Vigente"
+    },
+    {
+      "Folio": "CFDI-012",
+      "RFC Emisor": "MART950812JN4",
+      "RFC Receptor": "HERR780320KL9",
+      "Monto": 99750.50,
+      "Estatus": "Vigente"
+    }
+  ]
+}

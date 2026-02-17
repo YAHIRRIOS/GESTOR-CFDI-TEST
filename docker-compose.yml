@@ -1,0 +1,46 @@
+# Docker Compose 
+version: '3.8'
+
+services:
+  # ── Base de datos ────────────────────────────
+  db:
+    image: postgres:15-alpine
+    container_name: cfdi_postgres
+    restart: unless-stopped
+    environment:
+      API_KEY: JyQfnJyKYwtKUhZKMUgpoOPotgkMWRft
+      POSTGRES_DB: cfdi_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - '5432:5432'
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+    healthcheck:
+      test: [ 'CMD-SHELL', 'pg_isready -U postgres' ]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  # ── Aplicación Node.js ──────────────────────
+  app:
+    build: .
+    container_name: cfdi_app
+    restart: unless-stopped
+    ports:
+      - '3000:3000'
+    environment:
+      PORT: 3000
+      API_KEY: JyQfnJyKYwtKUhZKMUgpoOPotgkMWRft
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_USER: postgres
+      DB_PASSWORD: postgres
+      DB_NAME: cfdi_db
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  pgdata:

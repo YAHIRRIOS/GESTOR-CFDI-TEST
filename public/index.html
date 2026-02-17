@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dashboard para la gestión de CFDI con inconsistencias">
+  <title>Sistema de Gestión CFDI</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://kit.fontawesome.com/ec307d75a2.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="container">
+
+    <header class="header">
+      <div class="header-title">
+        <h1>Sistema de Gestión CFDI</h1>
+        <p>Comprobantes fiscales digitales con control de inconsistencias</p>
+      </div>
+      <div class="header-badge">
+        <span class="dot"></span>
+        Sistema Activo
+      </div>
+    </header>
+
+    <div class="card">
+      <div class="card-title"><i class="fa-solid fa-cloud-arrow-up"></i> Cargar Transacciones</div>
+      <div class="upload-zone" id="uploadZone">
+        <span class="icon"><i class="fa-solid fa-folder-open fa-2x"></i></span>
+        <div class="label">Arrastra tu archivo JSON aquí o haz clic para seleccionar</div>
+        <div class="hint">Formato: { "transacciones": [{ Folio, RFC Emisor, RFC Receptor, Monto, Estatus }] }</div>
+        <input type="file" id="fileInput" accept=".json">
+      </div>
+    </div>
+
+    <div class="stats-row" id="statsRow" style="display: flex;">
+      <div class="stat-card">
+        <div class="stat-value" id="statTotal">0</div>
+        <div class="stat-label">Total</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value danger" id="statInconsistentes">0</div>
+        <div class="stat-label">Inconsistentes</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value danger" id="statRfcInvalido">0</div>
+        <div class="stat-label">RFC Inválido</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value warning" id="statPrioridadAlta">0</div>
+        <div class="stat-label">Prioridad Alta</div>
+      </div>
+    </div>
+
+    <div class="card" id="filterCard" style="display: none;">
+      <div class="card-title"><i class="fa-solid fa-filter"></i> Filtros</div>
+      <div class="filter-bar">
+        <div class="input-group">
+          <label for="filterRfc">RFC Emisor</label>
+          <input type="text" id="filterRfc" placeholder="Buscar por RFC Emisor...">
+        </div>
+        <button class="btn btn-primary" id="btnFilter">Filtrar</button>
+        <button class="btn btn-secondary" id="btnClear">Limpiar</button>
+        <button class="btn btn-secondary" id="btnPdf"><i class="fa-solid fa-file-pdf"></i> Exportar PDF</button>
+      </div>
+    </div>
+
+    <div class="card" id="tableCard" style="display: none;">
+      <div class="card-title"><i class="fa-solid fa-table-list"></i> Transacciones Cargadas</div>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Folio</th>
+              <th>RFC Emisor</th>
+              <th>RFC Receptor</th>
+              <th>Monto</th>
+              <th>Estatus</th>
+              <th>Prioridad</th>
+              <th>RFC Emisor Válido</th>
+              <th>RFC Receptor Válido</th>
+              <th>Error</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody">
+          </tbody>
+        </table>
+      </div>
+      <div class="empty-state" id="emptyState">
+        <div class="icon"><i class="fa-solid fa-inbox fa-3x"></i></div>
+        <p>No hay transacciones cargadas aún.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
