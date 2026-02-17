@@ -1,6 +1,6 @@
 /* CFDI Dashboard */
-
 const API_BASE = '/api';
+/*La exposicion de la X-API es solo para fines demostrativos al no tener un sistema de autentificacion o JWT que la guarde */
 const API_KEY = 'JyQfnJyKYwtKUhZKMUgpoOPotgkMWRft';
 
 /* Utilidades */
