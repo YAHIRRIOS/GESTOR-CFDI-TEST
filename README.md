@@ -96,7 +96,7 @@ proyecto/
 
 ## Instalación y Ejecución
 
-### Opción 1: Docker Compose (la recomendada para el caso pedido)
+### Opción 1: Docker Compose
 
 ```bash
 # 1. Clonar el repositorio
